@@ -9,6 +9,13 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,76 +26,207 @@
   <body>
     <header>
       <div class="container">
-        <h1 class="logo">Delicious Recipe</h1>
+        <div class="logo">
+          <h1 class="logo-name"><a href="index.html"><span>D</span>ELICIOUS RECIPE</a></h1>
+        </div>
         <nav>
-            <div class="menu-icon">&#9776;</div>
           <ul class="nav-list">
-            <li>Home</li>
-            <li>About</li>
-            <li>Recipes</li>
-            <li>Contact</li>
+            <li><a href="#home" onclick="renderSelectedSection('main')">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#recipes" onclick="renderSelectedSection('recipe')">Recipes</a></li>
+            <li><a href="contact.html" onclick="renderSelectedSection('home_section')">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
+  <div class="main-section-area">
+    
     <section class="main">
       <div class="main-section">
         <h2>Welcome to our Recipe Collection!</h2>
         <p>Search mouth watering recipes to satisfy your craving.</p>
 
         <form action="" class="search-box">
-          <input type="text" placeholder="search Recipe" />
-          <button type="submit">Search</button>
+          <input type="text" placeholder="search recipe..." />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
       </div>
     </section>
 
     <!-- recipe section -->
-
-    <section class="recipes">
-      <h1>Featured Recipes</h1>
-      <div class="recipe-section">
-        <div class="recipe-card">
-          <img src="image/rec1.jpg" alt="" />
-          <h2>Strawberry Custard</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-            dolor sit, amet consectetur adipisicing elit. 
-          </p>
-          <a href="">View Recipe</a>
+    <section class="recipe" id="recipes">
+      <h1>Our Recipe</h1>
+      <div class="menu_box">
+        <div class="menu_card">
+          <div class="menu_img">
+            <img src="image/rec1.jpg" alt="Strawberry recipe" />
+          </div>
+          <div class="menu_text">
+            <h2>Strawberry recipe</h2>
+            <p>
+              Delight in the sweetness of fresh strawberries with this easy,
+              delicious recipe—perfect for any occasion
+            </p>
+            <button class="recipe-btn">View Recipe</button>
+          </div>
         </div>
-
-        <div class="recipe-card">
-          <img src="image/rec2.jpg" alt="" />
-          <h2>Soju And Sweet Rice</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-            dolor sit, amet consectetur adipisicing elit. </p>
-          <a href="">View Recipe</a>
+        <div class="menu_card">
+          <div class="menu_img">
+            <img src="image/rec2.jpg" alt="Rice Vegetables" />
+          </div>
+          <div class="menu_text">
+            <h2>Rice Vegetables</h2>
+            <p>
+              Savor the taste of Korea with this vegetable rice, filled with
+              fresh veggies and bold, savory flavors!
+            </p>
+            <button class="recipe-btn">View Recipe</button>
+          </div>
         </div>
-
-        <div class="recipe-card">
-          <img src="image/rec3.jpg" alt="" />
-          <h2>Best Lasagna Recipe</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum
-            dolor sit, amet consectetur adipisicing elit. </p>
-          <a href="">View Recipe</a>
+        <div class="menu_card">
+          <div class="menu_img">
+            <img src="image/rec3.jpg" alt="Lasagna Recipe" />
+          </div>
+          <div class="menu_text">
+            <h2>Lasagna Recipe</h2>
+            <p>
+              Layered with rich sauce, cheesy goodness, and savory meat, this
+              lasagna is a comfort food classic that's sure to impress.
+            </p>
+            <button class="recipe-btn">View Recipe</button>
+          </div>
         </div>
-
-        <div class="recipe-card">
-          <img src="image/rec4.jpg" alt="" />
-          <h2>Ratatouille Recipe</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing amet consectetur adipisicing elit elit.Lorem. </p>
-          <a href="">View Recipe</a>
+        <div class="menu_card">
+          <div class="menu_img">
+            <img src="image/rec4.jpg" alt="Ratatouille Recipe" />
+          </div>
+          <div class="menu_text">
+            <h2>Ratatouille Recipe</h2>
+            <p>
+              Refresh your taste buds with a colorful, crunchy vegetable
+              salad—light, healthy, and full of flavor.
+            </p>
+            <button class="recipe-btn">View Recipe</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- footer -->
+    <!-- home section -->
 
-    <footer>
-        <div>
-          <p>&copy; 2025 Delicious Recipes</p>  
+    <section class="home_section">
+       <div class="home_container">
+           <div class="home_text">
+            <h1>Spicy Beef Mexican <br> Tacos</h1>
+            <p>
+              This mouthwatering dish combines juicy, seasoned beef with the vibrant flavors of traditional Mexican cuisine. </p>
+            <button class="home-btn">View Recipe</button>
+           </div>
         </div>
+    </section>
+
+    <div class="popular_rec">
+      <div class="rec_container">
+        <h1>Popular <span>Recipes</span> Today</h1>
+        <button class="rec-btn">see more recipes</button>
+      </div>
+      <div class="rec_box">
+        <div class="rec_card">
+          <h2>Spicy Beef Mexican Tacos</h2>
+          <div class="rec-img">
+            <img src="image/img-rec1.avif" alt="">
+          </div>
+          <button class="rec-btn">see complete recipe</button>
+        </div>
+        <div class="rec_card">
+          <h2>Spicy Beef Mexican Tacos</h2>
+          <div class="rec-img">
+            <img src="image/img-rec2.avif" alt="">
+          </div>
+          <button class="rec-btn">see complete recipe</button>
+        </div>
+        <div class="rec_card">
+          <h2>Spicy Beef Mexican Tacos</h2>
+          <div class="rec-img">
+            <img src="image/img-rec3.avif" alt="">
+          </div>
+          <button class="rec-btn">see complete recipe</button>
+        </div>
+        <div class="rec_card">
+          <h2>Spicy Beef Mexican Tacos</h2>
+          <div class="rec-img">
+            <img src="image/img-rec3.avif" alt="">
+          </div>
+          <button class="rec-btn">see complete recipe</button>
+        </div>
+        <div class="rec_card">
+          <h2>Spicy Beef Mexican Tacos</h2>
+          <div class="rec-img">
+            <img src="image/img-rec3.avif" alt="">
+          </div>
+          <button class="rec-btn">see complete recipe</button>
+        </div>
+      </div>
+    </div>
+    <footer class="bottom">
+        <div class="footer_container">
+          <div class="row">
+            <div class="col" id="company">
+              <h1>DELICIOUS RECIPE</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta odit labore deleniti.</p>
+            
+             <div class="social">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube"></i></a>
+             </div>
+          </div>
+          <div class="col" id="services">
+            <h3>Company</h3>
+            <div class="links">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Recipe</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+          <div class="col" id="useful-links">
+            <h3>Recipe</h3>
+            <div class="links">
+            <a href="#">Appetizers</a>
+            <a href="#">Main Courses</a>
+            <a href="#">Deserts & Sweets</a>
+            <a href="#">International Flavors</a>
+            </div>
+          </div>
+          <div class="col" id="contact">
+            <h3>Contact</h3>
+            <div class="contact-deatails">
+              <i class="fa fa-location"></i>
+              <p>FF-42, Procube Avenue, <br> NY, USA</p>
+            </div>
+            <div class="contact-deatails">
+              <i class="fa fa-location"></i>
+              <p>+1-4578-498-8549</p>
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="form">
+              <form action="">
+                <input type="text" placeholder="Enter your email address">
+                <button><i class="fa fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>     
     </footer>
+  </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
